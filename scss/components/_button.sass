@@ -1,0 +1,12 @@
+@use '../abstracts' as *
+
+.button
+  @include button-style
+
+  @include tablet
+    width: 100%
+    max-width: 343px
+    height: 55px
+    font-size: $font-size-mobile-base
+    align-self: center
+

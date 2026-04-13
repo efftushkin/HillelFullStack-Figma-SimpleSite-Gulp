@@ -1,0 +1,47 @@
+@use '../abstracts' as *
+
+.footer
+  min-height: 150px
+  background-color: $primary-color
+  @include flex-center
+  margin: 0 calc(50vw - 960px)
+  padding: 50px 0
+
+  &-container
+    @include flex-column
+    align-items: flex-start
+    width: 100%
+    padding-left: 400px
+    box-sizing: border-box
+
+
+  &-author
+    @include font($font-size-footer-author, $font-weight-medium, $text-white)
+    margin-bottom: 20px
+
+  &-copy
+    @include font($font-size-footer-copy, $font-weight-regular, $text-white)
+    opacity: 1
+
+  @include no-desktop
+    margin: 0
+    padding: 20px 16px
+    min-height: auto
+    width: 100%
+
+    &-container
+      padding-left: 0
+      align-items: center
+      text-align: center
+      width: 100%
+      margin: 0 auto
+
+    &-author
+      font-size: $font-size-mobile-stat
+      margin-bottom: 10px
+
+    &-copy
+      font-size: $font-size-mobile-small
+
+  @include ipad
+    padding: 40px 0

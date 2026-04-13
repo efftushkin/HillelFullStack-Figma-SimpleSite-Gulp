@@ -1,0 +1,30 @@
+@use '../abstracts' as *
+
+.title
+  @include title-style
+  margin: 0 0
+  margin-bottom: 60px
+
+  @include no-desktop
+    font-size: $font-size-mobile-title
+    text-align: center
+    margin-bottom: 20px
+
+.description
+  @include font($font-size-base, $font-weight-regular, $text-gray)
+  max-width: 540px
+  line-height: 1.64
+  margin-bottom: 65px
+
+  @include no-desktop
+    max-width: 100%
+    margin-top: 20px
+    margin-bottom: 20px
+    text-align: center
+
+  @include tablet
+    font-size: $font-size-mobile-base
+
+  @include ipad
+    font-size: $font-size-mobile-medium
+

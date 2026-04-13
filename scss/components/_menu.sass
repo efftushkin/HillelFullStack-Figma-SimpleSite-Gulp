@@ -1,0 +1,52 @@
+@use '../abstracts' as *
+
+.menu
+  margin-bottom: 160px
+
+  &-toggler
+    display: none
+    position: absolute
+    top: 20px
+    left: 20px
+    @include font($font-size-toggler, $font-weight-regular, $primary-color)
+    cursor: pointer
+
+  &-list
+    position: static
+    display: flex
+    list-style: none
+    gap: 50px
+
+  &-item
+    @include font($font-size-base, $font-weight-regular, $text-black)
+    cursor: pointer
+    text-align: left
+    letter-spacing: 0.1em
+
+    &:hover
+      font-weight: $font-weight-medium
+      color: $primary-color
+
+  // Mobile styles
+  @include tablet
+    margin-bottom: 30px
+
+    &-list
+      display: none
+      position: absolute
+      top: 20px
+      left: 10px
+      background-color: $background-color
+
+    &-toggler
+      display: block
+
+      &:hover + .menu-list
+        display: block
+
+    &-list:hover
+      display: block
+
+    &-item
+      font-size: $font-size-mobile-base
+      margin: 5px 10px

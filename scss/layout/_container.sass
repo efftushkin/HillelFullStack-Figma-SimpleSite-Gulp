@@ -1,0 +1,15 @@
+@use '../abstracts' as *
+
+.container
+  min-height: 700px
+  margin: 0 calc(50vw - 960px)
+  padding: 80px 0 80px 400px
+  @include flex-column
+  align-items: flex-start
+  background-color: $background-color
+
+  @include no-desktop
+    margin: 0 auto
+    padding: 20px 16px
+    min-height: auto
+    width: 100%

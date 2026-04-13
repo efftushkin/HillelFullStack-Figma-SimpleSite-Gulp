@@ -1,0 +1,61 @@
+@use '../abstracts' as *
+
+.about
+  &-section
+    min-height: 360px
+    @include flex-center
+    margin: 0 calc(50vw - 960px)
+    padding-top: 110px
+    padding-bottom: 80px
+
+  &-container
+    width: 540px
+    @include flex-column
+    align-items: center
+
+  &-title
+    @include font($font-size-subtitle, $font-weight-medium, $text-black)
+    @include subtitle-style
+    margin-bottom: 50px
+    text-align: center
+
+  &-text
+    @include font($font-size-base, $font-weight-regular, $text-gray)
+    max-width: 540px
+    line-height: 1.64
+    text-align: center
+
+  @include no-desktop
+    &-section
+      margin: 0 auto
+      box-sizing: border-box
+      min-height: auto
+      width: 100%
+
+    &-container
+      margin: 0 auto
+      padding: 0 20px
+      max-width: 100%
+
+    &-text
+      width: 100%
+      margin-left: auto
+      margin-right: auto
+
+  @include tablet
+    &-section
+      padding: 20px 16px
+
+    &-title
+      font-size: $font-size-mobile-subtitle
+      margin-bottom: 20px
+
+    &-text
+      font-size: $font-size-mobile-base
+
+  @include ipad
+    &-section
+      padding: 60px 40px
+
+    &-text
+      font-size: $font-size-mobile-medium

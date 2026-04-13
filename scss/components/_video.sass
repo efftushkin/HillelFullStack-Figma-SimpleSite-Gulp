@@ -1,0 +1,36 @@
+@use '../abstracts' as *
+
+.video-box
+  width: 1110px
+  height: 600px
+  position: relative
+  background-color: $text-black
+  @include flex-center
+  align-items: center
+
+  // Smaller than desktop
+  @include no-desktop
+    width: 100%
+    height: auto
+    aspect-ratio: 16 / 9
+    margin: 0 auto;
+
+.video-img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.play-btn
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 100px
+  height: 100px
+  cursor: pointer
+  z-index: 10;
+
+  // Smaller than desktop
+  @include no-desktop
+    width: 60px
+    height: 60px

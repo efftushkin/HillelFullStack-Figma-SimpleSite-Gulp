@@ -1,0 +1,55 @@
+@use 'variables' as *
+
+// Media Query Mixins
+@mixin mobile
+  @media (max-width: $breakpoint-mobile - 1px)
+    @content
+
+@mixin tablet
+  @media (max-width: $breakpoint-tablet - 1px)
+    @content
+
+@mixin ipad
+  @media (min-width: calc($breakpoint-tablet)) and (max-width: $breakpoint-ipad - 1px)
+    @content
+
+@mixin no-desktop
+  @media (max-width: $breakpoint-ipad - 1px)
+    @content
+
+// Flexbox Mixins
+@mixin flex-center
+  display: flex
+  justify-content: center
+
+@mixin flex-justify
+  display: flex
+  justify-content: space-around
+
+@mixin flex-column
+  display: flex
+  flex-direction: column
+
+// Typography Mixins
+@mixin font($size, $weight: $font-weight-regular, $color: $text-black)
+  font-size: $size
+  font-weight: $weight
+  color: $color
+
+@mixin title-style
+  @include font($font-size-title, $font-weight-medium, $text-black)
+
+@mixin subtitle-style
+  @include font($font-size-subtitle, $font-weight-medium, $text-black)
+
+// Button Mixin
+@mixin button-style
+  width: 225px
+  height: 65px
+  background-color: $primary-color
+  color: $text-white
+  border: none
+  cursor: pointer
+  @include font($font-size-base, $font-weight-regular, $text-white)
+  letter-spacing: 0.1em
+  transition: background-color 0.3s ease

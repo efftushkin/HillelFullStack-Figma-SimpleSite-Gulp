@@ -1,0 +1,78 @@
+@use '../abstracts' as *
+
+.stats
+  &-section
+    min-height: 250px
+    background-color: $primary-color
+    @include flex-center
+    align-items: flex-start
+    margin: 0 calc(50vw - 960px)
+    padding-top: 100px
+
+  &-container
+    @include flex-center
+    gap: 60px
+    align-items: center
+
+  &-item
+    display: flex
+    align-items: center
+    gap: 20px
+    min-height: 50px
+
+  &-icon
+    width: auto
+    height: auto
+
+  &-content
+    @include flex-column
+    gap: 10px
+
+  &-number
+    @include font($font-size-stat, $font-weight-medium, $text-white)
+
+  &-label
+    @include font($font-size-base, $font-weight-regular, $text-white)
+
+  // Tablet styles
+  @include no-desktop
+    &-section
+      margin: 0
+      width: 100%
+      padding: 20px 16px
+      min-height: 250px
+
+    &-container
+      display: grid
+      justify-items: center
+      grid-template-columns: repeat(3, 1fr)
+      gap: 0
+      width: 100%
+      min-height: 210px
+
+    &-item
+      flex-direction: row
+      justify-content: center
+
+    &-icon
+      width: 50px
+      height: 50px
+
+    &-content
+      align-items: center
+      gap: 5px
+
+    &-number
+      font-size: $font-size-mobile-stat
+
+    &-label
+      font-size: $font-size-mobile-base
+
+  // Mobile styles
+  @include mobile
+    &-item
+      flex-direction: column
+      text-align: center
+      gap: 5px
+    &-content
+      gap: 2px
